@@ -74,7 +74,7 @@ describe Shrine::Plugins::UploadEndpoint do
   end
 
   it "handles filenames with UTF-8 characters" do
-    filename = "über_pdf_with_1337%_leetness.pdf"
+    filename = "uber_pdf_with_1337%_leetness.pdf"
     form = HTTP::FormData.create(file: HTTP::FormData::Part.new("", filename: filename))
     response = app.post "/", multipart: { input: form.to_s }, headers: {"Content-Type" => form.content_type}
     assert_equal 200, response.status

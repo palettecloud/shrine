@@ -621,7 +621,7 @@ describe Shrine::Plugins::ValidationHelpers do
     it "uses the default error message" do
       @attacher.class.validate { validate_mime_type_inclusion(["video/mpeg"]) }
       @attacher.validate
-      assert_equal ["type must be one of: video/mpeg"], @attacher.errors
+      assert_equal ["は次の拡張子のみ登録ができます (許可された拡張子: video/mpeg)"], @attacher.errors
     end
 
     it "accepts a custom error message" do
@@ -656,7 +656,7 @@ describe Shrine::Plugins::ValidationHelpers do
     it "is aliased to #validate_mime_type" do
       @attacher.class.validate { validate_mime_type(["video/mpeg"]) }
       @attacher.validate
-      assert_equal ["type must be one of: video/mpeg"], @attacher.errors
+      assert_equal ["は次の拡張子のみ登録ができます (許可された拡張子: video/mpeg)"], @attacher.errors
     end
   end
 
