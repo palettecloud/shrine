@@ -13,7 +13,7 @@ class Shrine
         min_height:          -> (min)  { "height must not be less than #{min}px" },
         max_dimensions:      -> (dims) { "dimensions must not be greater than #{dims.join("x")}" },
         min_dimensions:      -> (dims) { "dimensions must not be less than #{dims.join("x")}" },
-        mime_type_inclusion: -> (list) { "type must be one of: #{list.join(", ")}" },
+        mime_type_inclusion: -> (list) { "は次の拡張子のみ登録ができます (許可された拡張子: #{list.join(', ')})" },
         mime_type_exclusion: -> (list) { "type must not be one of: #{list.join(", ")}" },
         extension_inclusion: -> (list) { "extension must be one of: #{list.join(", ")}" },
         extension_exclusion: -> (list) { "extension must not be one of: #{list.join(", ")}" },
